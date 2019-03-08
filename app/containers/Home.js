@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Image } from 'react-native'
+import { StyleSheet, View, Image, FlatList, Alert, Text } from 'react-native'
+import styled from 'styled-components'
+import MovieListItem from '../components/MovieListItem'
 import { connect } from 'react-redux'
 
 import { Button } from '../components'
 
 import { NavigationActions } from '../utils'
+import fakeMovies from '../test_data/fakeMovies'
 
-@connect()
+@connect(({ app, Home }, router) => ({ app, Home, router }))
 class Home extends Component {
   static navigationOptions = {
     tabBarLabel: 'Home',
@@ -18,25 +21,38 @@ class Home extends Component {
     ),
   }
 
-  gotoDetail = () => {
-    this.props.dispatch(NavigationActions.navigate({ routeName: 'Detail' }))
+  _pressMovieItem = (movie) => {
+    // this.props.dispatch(NavigationActions.navigate({ routeName: 'Detail' }))
+    Alert.alert(`${movie.item.name} is clicked!`)
+  }
+
+  keyExtractor = item => item.name
+
+  renderMovieItem = (movie, id) => {
+    return (
+      <MovieListItem 
+        movie={movie}      
+        onPressItem={this._pressMovieItem}   
+      ></MovieListItem>
+    )
   }
 
   render() {
-    return (
-      <View style={styles.container}>
-        <Button text="Goto Detail" onPress={this.gotoDetail} />
-      </View>
-    )
+    return (      
+      <MovieList
+        data={fakeMovies}
+        renderItem={this.renderMovieItem}
+        keyExtractor={this.keyExtractor}
+      ></MovieList>
+    );
   }
 }
 
+const MovieList = styled.FlatList`
+
+`
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   icon: {
     width: 32,
     height: 32,
