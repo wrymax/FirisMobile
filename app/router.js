@@ -16,7 +16,7 @@ import Loading from './containers/Loading'
 import Login from './containers/Login'
 import Home from './containers/Home'
 import Account from './containers/Account'
-import Detail from './containers/Detail'
+import MovieDetail from './containers/MovieDetail'
 
 const HomeNavigator = createBottomTabNavigator({
   Home: { screen: Home },
@@ -34,7 +34,7 @@ HomeNavigator.navigationOptions = ({ navigation }) => {
 const MainNavigator = createStackNavigator(
   {
     HomeNavigator: { screen: HomeNavigator },
-    Detail: { screen: Detail },
+    MovieDetail: { screen: MovieDetail },
   },
   {
     headerMode: 'float',

@@ -22,8 +22,8 @@ class Home extends Component {
   }
 
   _pressMovieItem = (movie) => {
-    // this.props.dispatch(NavigationActions.navigate({ routeName: 'Detail' }))
-    Alert.alert(`${movie.item.name} is clicked!`)
+    this.props.dispatch(NavigationActions.navigate({ routeName: 'MovieDetail', params: { movie: movie } }))
+    // Alert.alert(`${movie.item.name} is clicked!`)
   }
 
   keyExtractor = item => item.name

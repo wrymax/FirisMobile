@@ -4,8 +4,7 @@ import styled from 'styled-components'
 
 class MovieListItem extends React.Component {
   _onPress = () => {
-    console.log(this.props)
-    this.props.onPressItem(this.props.movie);
+    this.props.onPressItem(this.props.movie.item);
   };
 
   render() {
