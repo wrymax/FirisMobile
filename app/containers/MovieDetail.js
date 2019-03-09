@@ -5,11 +5,17 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { Button } from '../components'
 import { NavigationActions } from '../utils'
+import fakeCharacters from '../test_data/fakeCharacters'
+import CharacterPicker from '../components/CharacterPicker'
 
 @connect()
 class MovieDetail extends Component {
   static navigationOptions = {
     title: 'MovieDetail',
+  }
+
+  renderCharacterPickers = () => {
+    return fakeCharacters.map(character => (<CharacterPicker character={character} />))
   }
 
   render() {
@@ -27,14 +33,12 @@ class MovieDetail extends Component {
         >
         </Video>
         <Description>{movie.description}</Description>
-        <SelectCharacter>
-          <Character source={{uri: movie.image}} />
-          <Character source={{uri: movie.image}} />
-        </SelectCharacter>
-        <SelectCharacter>
-          <Character source={{uri: movie.image}} />
-          <Character source={{uri: movie.image}} />
-        </SelectCharacter>
+        { this.renderCharacterPickers() }
+        <Character source={{uri: movie.image}} />
+        <Character source={{uri: movie.image}} />
+        <Character source={{uri: movie.image}} />
+        <Character source={{uri: movie.image}} />
+        
       </MovieView>
     )
   }
@@ -42,27 +46,21 @@ class MovieDetail extends Component {
 
 const MovieView = styled.View`
   backgroundColor: white;
+  flex: 1;
+  justifyContent: space-evenly;
+  flexDirection: row;
+  flexWrap: wrap;
 `
 const Description = styled.Text`
   fontSize: 14;
   color: #666;
-`
-
-const SelectCharacter = styled.View`
-  paddingTop: 20;
-  paddingLeft: 20;
-  paddingRight: 20;
-  flex: 1;
-  justifyContent: space-evenly;
-  flexDirection: row;
-  height: 400;
-  width: 100%;
-  backgroundColor: white;
+  marginBottom: 20;
 `
 
 const Character = styled.Image`
-  width: 45%;
+  width: 40%;
   height: 100;
+  marginBottom: 20;
 `
 
 const styles = StyleSheet.create({
