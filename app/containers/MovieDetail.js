@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { Button } from '../components'
 import { NavigationActions } from '../utils'
 import fakeCharacters from '../test_data/fakeCharacters'
-import CharacterPicker from '../components/CharacterPicker'
+// import CharacterPicker from '../components/CharacterPicker'
 
 @connect()
 class MovieDetail extends Component {
@@ -33,7 +33,7 @@ class MovieDetail extends Component {
         >
         </Video>
         <Description>{movie.description}</Description>
-        { this.renderCharacterPickers() }
+        {/* { this.renderCharacterPickers() } */}
         <Character source={{uri: movie.image}} />
         <Character source={{uri: movie.image}} />
         <Character source={{uri: movie.image}} />
