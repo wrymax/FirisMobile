@@ -24,6 +24,7 @@ const HomeNavigator = createBottomTabNavigator({
 })
 
 HomeNavigator.navigationOptions = ({ navigation }) => {
+  console.log(navigation)
   const { routeName } = navigation.state.routes[navigation.state.index]
 
   return {

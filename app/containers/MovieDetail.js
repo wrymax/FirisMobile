@@ -4,24 +4,44 @@ import Video from 'react-native-video'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { Button } from '../components'
-import { NavigationActions } from '../utils'
+import { createAction, NavigationActions } from '../utils'
 import fakeCharacters from '../test_data/fakeCharacters'
-// import CharacterPicker from '../components/CharacterPicker'
+import CharacterPicker from '../components/CharacterPicker'
 
-@connect()
+@connect(({ currentUser }, router) => ({ currentUser, router }))
 class MovieDetail extends Component {
   static navigationOptions = {
     title: 'MovieDetail',
   }
 
   renderCharacterPickers = () => {
-    return fakeCharacters.map(character => (<CharacterPicker character={character} />))
+    const state = this.props.navigation.state
+    const { movie } = state.params
+    const { currentUser } = this.props
+
+    return fakeCharacters.map(character => 
+      (
+        <CharacterPicker 
+          character={character} 
+          movie={movie} 
+          key={character.id}
+          picked={character.id == currentUser.pickedCharacter && movie.id == currentUser.pickedMovie}
+          pressCharacterPicker={this.pickCharacter} 
+        />
+      )
+    )
+  }
+
+  pickCharacter = (payload) => {
+    this.props.dispatch(createAction('currentUser/pickCharacter')(payload))
   }
 
   render() {
     const state = this.props.navigation.state
     const { movie } = state.params
-    console.log(movie)
+    console.log("--- this ---")
+    console.log(this)
+
     return (
       <MovieView style={styles.container}>
         <Video 
@@ -33,11 +53,11 @@ class MovieDetail extends Component {
         >
         </Video>
         <Description>{movie.description}</Description>
-        {/* { this.renderCharacterPickers() } */}
+        { this.renderCharacterPickers() }
+        {/* <Character source={{uri: movie.image}} />
         <Character source={{uri: movie.image}} />
         <Character source={{uri: movie.image}} />
-        <Character source={{uri: movie.image}} />
-        <Character source={{uri: movie.image}} />
+        <Character source={{uri: movie.image}} /> */}
         
       </MovieView>
     )
