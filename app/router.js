@@ -17,6 +17,7 @@ import Login from './containers/Login'
 import Home from './containers/Home'
 import Account from './containers/Account'
 import MovieDetail from './containers/MovieDetail'
+import ScanFace from './containers/ScanFace'
 
 const HomeNavigator = createBottomTabNavigator({
   Home: { screen: Home },
@@ -36,6 +37,7 @@ const MainNavigator = createStackNavigator(
   {
     HomeNavigator: { screen: HomeNavigator },
     MovieDetail: { screen: MovieDetail },
+    ScanFace: { screen: ScanFace }
   },
   {
     headerMode: 'float',

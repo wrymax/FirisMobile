@@ -3,10 +3,11 @@ import { StyleSheet, View } from 'react-native'
 import Video from 'react-native-video'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import { Button } from '../components'
+// import { Button } from '../components'
 import { createAction, NavigationActions } from '../utils'
 import fakeCharacters from '../test_data/fakeCharacters'
 import CharacterPicker from '../components/CharacterPicker'
+import BottomFloatButton from '../components/BottomFloatButton'
 
 @connect(({ currentUser }, router) => ({ currentUser, router }))
 class MovieDetail extends Component {
@@ -36,12 +37,28 @@ class MovieDetail extends Component {
     this.props.dispatch(createAction('currentUser/pickCharacter')(payload))
   }
 
+  pressNextButton = () => {
+    console.log('------ pressed')
+    this.props.dispatch(NavigationActions.navigate({ routeName: 'ScanFace' }))
+  }
+
+  renderNextButton = () => {
+    const { currentUser } = this.props
+    if(currentUser.pickedCharacter && currentUser.pickedMovie) {
+      return (
+        <BottomFloatButton onPress={this.pressNextButton} />
+      )
+    }
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch(createAction('currentUser/cancelPickCharacter')())
+  }
+
   render() {
     const state = this.props.navigation.state
     const { movie } = state.params
-    console.log("--- this ---")
-    console.log(this)
-
+    
     return (
       <MovieView style={styles.container}>
         <Video 
@@ -54,11 +71,7 @@ class MovieDetail extends Component {
         </Video>
         <Description>{movie.description}</Description>
         { this.renderCharacterPickers() }
-        {/* <Character source={{uri: movie.image}} />
-        <Character source={{uri: movie.image}} />
-        <Character source={{uri: movie.image}} />
-        <Character source={{uri: movie.image}} /> */}
-        
+        { this.renderNextButton() }        
       </MovieView>
     )
   }
@@ -82,6 +95,13 @@ const Character = styled.Image`
   height: 100;
   marginBottom: 20;
 `
+
+// const NextButton = styled.Button`
+//   width: 200;
+//   height: 40;
+//   backgroundColor: #4366FF;
+//   color: white;
+// `
 
 const styles = StyleSheet.create({
   video: {

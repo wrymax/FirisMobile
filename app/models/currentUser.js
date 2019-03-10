@@ -9,8 +9,6 @@ export default {
   },
   reducers: {    
     updateState(state, { payload }) {
-      console.log('-- reducer updateState:')
-      console.log(payload)
       return { ...state, ...payload }
     },
   },
@@ -20,7 +18,6 @@ export default {
     //   yield put(createAction('updateState')({ login, loading: false }))
     // },
     *pickCharacter({ payload }, { call, put }) {
-      console.log('-- effect pickCharacter:')
       yield put(createAction('updateState')(payload))
       // const login = yield call(authService.login, payload)
       // if (login) {
@@ -29,6 +26,12 @@ export default {
       // yield put(createAction('updateState')({ login, fetching: false }))
       // Storage.set('login', login)
     },
+    *cancelPickCharacter({}, { call, put }) {
+      yield put(createAction('updateState')({
+        pickedMovie: null,
+        pickedCharacter: null
+      }))
+    }
     // *logout(action, { call, put }) {
     //   yield call(Storage.set, 'login', false)
     //   yield put(createAction('updateState')({ login: false }))
