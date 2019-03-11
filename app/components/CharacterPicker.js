@@ -16,7 +16,7 @@ class CharacterPicker extends Component {
     if(this.props.picked) {
       return (
         <PickedCheckMask>
-          <Check>️️️✔️️️</Check>
+          <Check>️️️✔</Check>
         </PickedCheckMask>
       )
     }
@@ -69,6 +69,7 @@ const Check = styled.Text`
   color: blue;
   width: 100%;
   text-align: center;
+  marginTop: 30;
 `
 
 const styles = StyleSheet.create({

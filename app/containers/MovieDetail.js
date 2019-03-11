@@ -38,7 +38,6 @@ class MovieDetail extends Component {
   }
 
   pressNextButton = () => {
-    console.log('------ pressed')
     this.props.dispatch(NavigationActions.navigate({ routeName: 'ScanFace' }))
   }
 
@@ -58,7 +57,6 @@ class MovieDetail extends Component {
   render() {
     const state = this.props.navigation.state
     const { movie } = state.params
-    
     return (
       <MovieView style={styles.container}>
         <Video 
@@ -83,11 +81,18 @@ const MovieView = styled.View`
   justifyContent: space-evenly;
   flexDirection: row;
   flexWrap: wrap;
+  marginLeft: 0;
+  paddingLeft: 0;
+  marginRight: 0;
+  paddingRight: 0;
 `
 const Description = styled.Text`
   fontSize: 14;
   color: #666;
   marginBottom: 20;
+  marginTop: 20;
+  paddingLeft: 20;
+  paddingRight: 20;
 `
 
 const Character = styled.Image`
@@ -106,7 +111,7 @@ const Character = styled.Image`
 const styles = StyleSheet.create({
   video: {
     width: '100%',
-    height: 300
+    height: 215,
   }
 })
 

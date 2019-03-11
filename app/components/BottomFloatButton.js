@@ -18,7 +18,7 @@ const ButtonWrapper = styled.TouchableOpacity`
   left: 20%;
   position: absolute;
   bottom: 80;
-  height: 40;
+  height: 50;
   zIndex: 10;
   backgroundColor: #4366FF;
   flex: 1;
@@ -30,6 +30,8 @@ const ButtonText = styled.Text`
   width: 100%;
   textAlign: center;
   color: white;
+  marginTop: 12;
+  fontSize: 20
 `
 
 export default BottomFloatButton
