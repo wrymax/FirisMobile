@@ -1,48 +1,70 @@
 import React, { PureComponent } from 'react'
 import { BackHandler, Animated, Easing } from 'react-native'
+
 import {
   createStackNavigator,
   createBottomTabNavigator,
   NavigationActions,
+  createMaterialTopTabNavigator,
 } from 'react-navigation'
 import {
   reduxifyNavigator,
   createReactNavigationReduxMiddleware,
   createNavigationReducer,
 } from 'react-navigation-redux-helpers'
+
+
 import { connect } from 'react-redux'
+
+import Home from './containers/Home'
+import Account from './containers/Account'
 
 import Loading from './containers/Loading'
 import Login from './containers/Login'
-import Home from './containers/Home'
-import Account from './containers/Account'
+
 import MovieDetail from './containers/MovieDetail'
 import ScanFace from './containers/ScanFace'
+import MyVideo from './containers/MyVideo'
 
+
+
+
+// always pin on bottom of the screen
 const HomeNavigator = createBottomTabNavigator({
   Home: { screen: Home },
-  Account: { screen: Account },
+  Account: { screen: Account }
 })
 
+// give the title of the page
 HomeNavigator.navigationOptions = ({ navigation }) => {
   console.log(navigation)
-  const { routeName } = navigation.state.routes[navigation.state.index]
 
+  const { routeName } = navigation.state.routes[navigation.state.index]
   return {
     headerTitle: routeName,
   }
 }
 
+
+
+
+
+
 const MainNavigator = createStackNavigator(
   {
     HomeNavigator: { screen: HomeNavigator },
     MovieDetail: { screen: MovieDetail },
-    ScanFace: { screen: ScanFace }
+    ScanFace: { screen: ScanFace },
+    MyVideo: { screen: MyVideo }
   },
   {
     headerMode: 'float',
   }
 )
+
+
+
+
 
 const AppNavigator = createStackNavigator(
   {
@@ -82,14 +104,20 @@ const AppNavigator = createStackNavigator(
   }
 )
 
-export const routerReducer = createNavigationReducer(AppNavigator)
 
+
+
+
+export const routerReducer = createNavigationReducer(AppNavigator)
 export const routerMiddleware = createReactNavigationReduxMiddleware(
   'root',
   state => state.router
 )
-
 const App = reduxifyNavigator(AppNavigator, 'root')
+
+
+
+
 
 function getActiveRouteName(navigationState) {
   if (!navigationState) {
@@ -101,6 +129,10 @@ function getActiveRouteName(navigationState) {
   }
   return route.routeName
 }
+
+
+
+
 
 @connect(({ app, router }) => ({ app, router }))
 class Router extends PureComponent {
@@ -131,5 +163,10 @@ class Router extends PureComponent {
     return <App dispatch={dispatch} state={router} />
   }
 }
+
+
+
+
+
 
 export default Router
