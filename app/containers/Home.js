@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Image, FlatList, Alert, Text } from 'react-native'
 import styled from 'styled-components'
 import MovieListItem from '../components/MovieListItem'
-import ScrollableTab from "../components/ScrollableTab";
+import ScrollableTab, { DefaultTabBar, ScrollableTabBar } from "../components/ScrollableTab";
 import { connect } from 'react-redux'
 
 
@@ -40,12 +40,17 @@ class Home extends Component {
 
   render() {
     return (      
-      <MovieList
-        data={fakeMovies}
-        renderItem={this.renderMovieItem}
-        keyExtractor={this.keyExtractor}
-      >
-      </MovieList>
+      <View style={styles.container}>
+        <ScrollableTab initialPage={0}/>
+
+        <MovieList
+          style={styles.list}
+          data={fakeMovies}
+          renderItem={this.renderMovieItem}
+          keyExtractor={this.keyExtractor}
+        >
+        </MovieList>
+      </View>
     );
   }
 }
@@ -56,14 +61,18 @@ const MovieList = styled.FlatList`
 
 
 
-
-
-
 const styles = StyleSheet.create({
   icon: {
     width: 32,
     height: 32,
   },
+  container: {
+    flexDirection: 'column',
+    flex: 1
+  },
+  list: {
+    flex: 1
+  }
 })
 
 export default Home

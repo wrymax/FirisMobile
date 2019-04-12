@@ -26,27 +26,27 @@ class MyVideos extends Component {
     }
 
     renderVideoItem = (video, id) => {
-        return (
-        <MyVideoListItem 
-          video={video}      
-          onPressItem={this._pressVideoItem}   
-        ></MyVideoListItem>
-        )
+      return (
+      <MyVideoListItem 
+        video={video}      
+        onPressItem={this._pressVideoItem}   
+      ></MyVideoListItem>
+      )
     }
     keyExtractor = item => item.name
 
     render() {
-        return (
-          <View>
-              <ScrollableTab initialPage={2}/>
-              <MovieList
-                data={fakeMyVideos}
-                renderItem={this.renderVideoItem}
-                keyExtractor={this.keyExtractor}
-              >
-              </MovieList>
-          </View>
-        )
+      return (
+        <View>
+          <ScrollableTab initialPage={2}/>
+          <MovieList
+            data={fakeMyVideos}
+            renderItem={this.renderVideoItem}
+            keyExtractor={this.keyExtractor}
+          >
+          </MovieList>
+        </View>
+      )
     }
 }
 
@@ -54,13 +54,13 @@ const MovieList = styled.FlatList`
 `
 
 const styles = StyleSheet.create({
-    icon: {
-        width: 32,
-        height: 32,
-    },
-    button: {
-        flex: 1
-    }
+  icon: {
+    width: 32,
+    height: 32,
+  },
+  button: {
+    flex: 1
+  }
 })
 
 export default MyVideos
