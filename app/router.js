@@ -31,7 +31,7 @@ import MyVideo from './containers/MyVideo'
 
 // always pin on bottom of the screen
 const HomeNavigator = createBottomTabNavigator({
-  Home: { screen: Home },
+  Home: { screen: MyVideo },
   Account: { screen: Account }
 })
 

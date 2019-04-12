@@ -71,9 +71,11 @@ class MovieDetail extends Component {
   render() {
     const state = this.props.navigation.state
     const { movie } = state.params
+    console.log("movie uri is ", movie.video_uri);
     return (
       <MovieView style={styles.container}>
         <Video 
+        
           source={{uri: movie.video_uri }}
           style={styles.video}
           ref={(ref) => {
