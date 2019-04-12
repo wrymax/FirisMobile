@@ -15,7 +15,7 @@ class ScrollableTab extends React.Component {
               <ScrollPlaceholder></ScrollPlaceholder>
               <ScrollableTabView
                   style={styles.ScrollableTabView}
-                  // initialPage={0}
+                  initialPage={this.props.initialPage}
                   renderTabBar={() => <ScrollableTabBar />}
                   tabBarPosition='top'
                   
