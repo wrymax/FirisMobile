@@ -5,11 +5,18 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 // import { Button } from '../components'
 import { createAction, NavigationActions } from '../utils'
+
 import fakeCharacters from '../test_data/fakeCharacters'
 import CharacterPicker from '../components/CharacterPicker'
+
 import BottomFloatButton from '../components/BottomFloatButton'
 
+
+
+
+
 @connect(({ currentUser }, router) => ({ currentUser, router }))
+
 class MovieDetail extends Component {
   static navigationOptions = {
     title: 'MovieDetail',
@@ -36,7 +43,7 @@ class MovieDetail extends Component {
   pickCharacter = (payload) => {
     this.props.dispatch(createAction('currentUser/pickCharacter')(payload))
   }
-
+  
   pressNextButton = () => {
     this.props.dispatch(NavigationActions.navigate({ routeName: 'ScanFace' }))
   }
@@ -53,6 +60,13 @@ class MovieDetail extends Component {
   componentWillUnmount() {
     this.props.dispatch(createAction('currentUser/cancelPickCharacter')())
   }
+
+
+
+
+
+
+
 
   render() {
     const state = this.props.navigation.state
@@ -74,6 +88,13 @@ class MovieDetail extends Component {
     )
   }
 }
+
+
+
+
+
+
+
 
 const MovieView = styled.View`
   backgroundColor: white;
