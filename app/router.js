@@ -27,9 +27,6 @@ import ScanFace from './containers/ScanFace'
 import MyVideo from './containers/MyVideo'
 import MyVideos from './containers/MyVideos'
 
-
-
-
 // always pin on bottom of the screen
 const HomeNavigator = createBottomTabNavigator({
   Home: { screen: Home },
@@ -46,11 +43,6 @@ HomeNavigator.navigationOptions = ({ navigation }) => {
   }
 }
 
-
-
-
-
-
 const MainNavigator = createStackNavigator(
   {
     HomeNavigator: { screen: HomeNavigator },
@@ -63,10 +55,6 @@ const MainNavigator = createStackNavigator(
     headerMode: 'float',
   }
 )
-
-
-
-
 
 const AppNavigator = createStackNavigator(
   {
