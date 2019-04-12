@@ -74,11 +74,11 @@ class ScanFace extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  button: {
-    flex: 1
-  }
-})
+// const styles = StyleSheet.create({
+//   button: {
+//     flex: 1
+//   }
+// })
 
 
 export default ScanFace
