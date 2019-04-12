@@ -34,10 +34,11 @@ const styles = StyleSheet.create({
 class ScanFace extends Component {
   static navigationOptions = {
     header: null,
+    title: 'ScanFace',
     };
     
   takePicture = () => {
-    this.props.dispatch(NavigationActions.navigate({ routeName: 'Home' }))
+    this.props.dispatch(NavigationActions.navigate({ routeName: 'MyVideos' }))
   }
 
   render() {
