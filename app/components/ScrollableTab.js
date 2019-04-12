@@ -18,7 +18,6 @@ class ScrollableTab extends React.Component {
                   initialPage={this.props.initialPage}
                   renderTabBar={() => <ScrollableTabBar />}
                   tabBarPosition='top'
-                  
               >
                   <Text tabLabel='TOP'>My</Text>
                   <Text tabLabel='MOST RECENT'>favorite</Text>
