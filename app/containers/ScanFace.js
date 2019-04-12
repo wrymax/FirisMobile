@@ -4,16 +4,18 @@ import {
   Dimensions,
   ListView,
   Image,
+  View,
+  Text,
   ScrollView,
   StatusBar,
   AsyncStorage,
   ActivityIndicator,
   TouchableOpacity
- } from 'react-native';
+ } from 'react-native'
+import { NavigationActions } from '../utils'
+import { connect } from 'react-redux'
 import Camera from 'react-native-camera'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { View, Text } from 'react-native'
-import styled from 'styled-components'
 
 const styles = StyleSheet.create({
   container: {
@@ -28,11 +30,16 @@ const styles = StyleSheet.create({
   }
 });
 
+@connect(({ currentUser }, router) => ({ currentUser, router }))
 class ScanFace extends Component {
   static navigationOptions = {
     header: null,
     };
     
+  takePicture = () => {
+    this.props.dispatch(NavigationActions.navigate({ routeName: 'Home' }))
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -42,10 +49,11 @@ class ScanFace extends Component {
             }}
             style={styles.preview}
             aspect={Camera.constants.Aspect.fill}
-            type={Camera.constants.Type.back}
+            type={Camera.constants.Type.front}
+            mirrorImage={true}
             captureMode={Camera.constants.CaptureMode.still}
             captureTarget={Camera.constants.CaptureTarget.memory}
-            captureQuality={Camera.constants.CaptureQuality.medium}
+            captureQuality={Camera.constants.CaptureQuality.high}
             playSoundOnCapture={true}>
 
             {/* <View style={[{ flex: 1 }]}>
