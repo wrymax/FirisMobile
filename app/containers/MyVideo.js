@@ -1,11 +1,12 @@
 import React, { Component } from "react"
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Switch, Text } from 'react-native'
 import styled from 'styled-components'
 import BottomFloatButton from '../components/BottomFloatButton'
 import Video from 'react-native-video'
 // import ScrollableTab from "../components/ScrollableTab";
 import { connect } from 'react-redux'
 import { createAction, NavigationActions } from '../utils'
+import { Button } from "../components";
 
 @connect(({ app }) => ({ ...app }))
 class MyVideo extends Component {
@@ -28,7 +29,7 @@ class MyVideo extends Component {
             console.log("movie modified")
         }
         return (
-            <View style={styles.container}>
+            <MovieView style={styles.container}>
                 {/* <ScrollableTab initialPage={2}/> */}
                 <Video 
                     source={{uri: movie.video_uri }}
@@ -38,9 +39,25 @@ class MyVideo extends Component {
                     }}
                     >
                 </Video>
-                <Text>Jerk!!</Text>
+                <Description>feawfewa</Description>
+                <ButtonView>
+                    <Text>Public To Community</Text>
+                    <Switch/>
+                </ButtonView>
                 {/* <BottomFloatButton onPress={this.pressNextButton} /> */}
-            </View>
+                <ShareView style = {styles.share}>
+                    <View style={{flexDirection: 'row', marginBottom: 10}}>
+                        <View style={{width: '33%', height: 50, backgroundColor: 'powderblue'}} />
+                        <View style={{width: '33%', height: 50, backgroundColor: 'skyblue'}} />
+                        <View style={{width: '33%', height: 50, backgroundColor: 'steelblue'}} />
+                    </View>
+                    <View style={{flexDirection: 'row', marginBottom: 10}}>
+                        <View style={{width: '33%', height: 50, backgroundColor: 'powderblue'}} />
+                        <View style={{width: '33%', height: 50, backgroundColor: 'skyblue'}} />
+                        <View style={{width: '33%', height: 50, backgroundColor: 'steelblue'}} />
+                    </View>
+                </ShareView>
+            </MovieView>
         )
     }
 }
@@ -51,7 +68,25 @@ const styles = StyleSheet.create({
     },
     video: {
         flex: 2
+    },
+    share: {
+        flex: 3
     }
-})
-
+});
+const ButtonView = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+`
+const MovieView = styled.View`
+    width: 100%
+`
+const IconBox = styled.View`
+    width: 50;
+    height:50;
+    border-color: powderblue;
+`
+const Description = styled.Text`
+`
+const ShareView = styled.View`
+`
 export default MyVideo
