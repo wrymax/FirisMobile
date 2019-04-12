@@ -1,14 +1,13 @@
-import React from 'react';
-import styled from 'styled-components'
+import React, { Component } from 'react'
 import {
-  Text, StyleSheet, View
-} from 'react-native';
+  Text,
+} from 'react-native'
+import { connect } from 'react-redux'
 
-import ScrollableTabView,{DefaultTabBar,ScrollableTabBar}  from 'react-native-scrollable-tab-view';
+import ScrollableTabView,{ScrollableTabBar}  from 'react-native-scrollable-tab-view'
 
-
-class ScrollableTab extends React.Component {
-
+@connect(({ currentUser }, router) => ({ currentUser, router }))
+class ScrollableTab extends Component {
     render() {
         return (
             <View>
@@ -28,20 +27,6 @@ class ScrollableTab extends React.Component {
             </View>
         );
     }
-}
-const styles = StyleSheet.create({
-  ScrollableTabView: {
-    position: "absolute",
-    zIndex: 100,
-    backgroundColor: 'white',
-    height: 50
   }
-})
-
-const ScrollPlaceholder = styled.View`
-  height: 50px;
-  position: relative;
-`
-
 
 export default ScrollableTab
