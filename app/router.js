@@ -25,6 +25,7 @@ import Login from './containers/Login'
 import MovieDetail from './containers/MovieDetail'
 import ScanFace from './containers/ScanFace'
 import MyVideo from './containers/MyVideo'
+import MyVideos from './containers/MyVideos'
 
 
 
@@ -55,6 +56,7 @@ const MainNavigator = createStackNavigator(
     HomeNavigator: { screen: HomeNavigator },
     MovieDetail: { screen: MovieDetail },
     ScanFace: { screen: ScanFace },
+    MyVideos: { screen: MyVideos },
     MyVideo: { screen: MyVideo }
   },
   {

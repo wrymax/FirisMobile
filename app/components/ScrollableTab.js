@@ -1,6 +1,7 @@
 import React from 'react';
+import styled from 'styled-components'
 import {
-  Text,
+  Text, StyleSheet
 } from 'react-native';
 
 import ScrollableTabView,{DefaultTabBar,ScrollableTabBar}  from 'react-native-scrollable-tab-view';
@@ -10,8 +11,9 @@ class ScrollableTab extends React.Component {
 
     render() {
         return (
+            
             <ScrollableTabView
-                style={{}}
+                style={styles.ScrollableTabView}
                 // initialPage={0}
                 renderTabBar={() => <ScrollableTabBar />}
                 tabBarPosition='top'
@@ -24,13 +26,15 @@ class ScrollableTab extends React.Component {
             </ScrollableTabView>
         );
     }
+}
+const styles = StyleSheet.create({
+  ScrollableTabView: {
+    // position: "absolute",
+    // zIndex: 100,
+    backgroundColor: 'white',
+    height: 40
   }
+})
 
-
-
-
-// export default () => {
-//   ;
-// }
 
 export default ScrollableTab
