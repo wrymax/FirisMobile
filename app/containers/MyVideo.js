@@ -10,6 +10,12 @@ import { Button } from "../components"
 
 @connect(({ app }) => ({ ...app }))
 class MyVideo extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: false
+        };
+    }
     static navigationOptions = {
         header: null,
         title: 'Community',
@@ -51,7 +57,10 @@ class MyVideo extends Component {
                         </DescMore>
                         <ButtonView>
                             <Text style={{lineHeight: 35}}>Public To Community</Text>
-                            <Switch />
+                            <Switch 
+                                value = {this.state.value}
+                                onValueChange = {(value) => {
+                                    this.setState({value})}} />
                         </ButtonView>
                     </Description>
                 </View>
