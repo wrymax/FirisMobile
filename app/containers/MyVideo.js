@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { StyleSheet, View, Switch, Text } from 'react-native'
+import { StyleSheet, View, Switch, Text, Image } from 'react-native'
 import styled from 'styled-components'
 import BottomFloatButton from '../components/BottomFloatButton'
 import Video from 'react-native-video'
@@ -47,7 +47,9 @@ class MyVideo extends Component {
                 {/* <BottomFloatButton onPress={this.pressNextButton} /> */}
                 <ShareView style = {styles.share}>
                     <View style={{flexDirection: 'row', marginBottom: 10}}>
-                        <View style={{width: '33%', height: 50, backgroundColor: 'powderblue'}} />
+                        <View style={{width: '33%', height: 50, backgroundColor: 'powderblue'}}> 
+                            <Image source = "../../assets/Icons/facebook.png"></Image>
+                        </View>
                         <View style={{width: '33%', height: 50, backgroundColor: 'skyblue'}} />
                         <View style={{width: '33%', height: 50, backgroundColor: 'steelblue'}} />
                     </View>
