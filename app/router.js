@@ -28,9 +28,11 @@ import MyVideo from './containers/MyVideo'
 import MyVideos from './containers/MyVideos'
 
 // always pin on bottom of the screen
-const HomeNavigator = createBottomTabNavigator({
-  FIRIS: { screen: Home },
-  Profile: { screen: Account }
+const HomeNavigator = createMaterialTopTabNavigator({
+  Home: { screen: Home },
+  MyVideos: { screen: MyVideos },
+  MyVideo: { screen: MyVideo }
+  // Profile: { screen: Account }
 })
 
 // give the title of the page
@@ -48,8 +50,6 @@ const MainNavigator = createStackNavigator(
     HomeNavigator: { screen: HomeNavigator },
     MovieDetail: { screen: MovieDetail },
     ScanFace: { screen: ScanFace },
-    MyVideos: { screen: MyVideos },
-    MyVideo: { screen: MyVideo }
   },
   {
     headerMode: 'float',

@@ -12,7 +12,7 @@ import MyVideoListItem from '../components/MyVideoListItem'
 @connect(({ app, Home }, router) => ({ app, Home, router }))
 class MyVideos extends Component {
     static navigationOptions = {
-      tabBarLabel: 'Home',
+      tabBarLabel: 'My Videos',
       tabBarIcon: ({ focused, tintColor }) => (
         <Image
           style={[styles.icon, { tintColor: focused ? tintColor : 'gray' }]}
@@ -38,7 +38,7 @@ class MyVideos extends Component {
     render() {
       return (
         <View>
-          <ScrollableTab initialPage={2}/>
+          {/* <ScrollableTab initialPage={2}/> */}
           <MovieList
             data={fakeMyVideos}
             renderItem={this.renderVideoItem}

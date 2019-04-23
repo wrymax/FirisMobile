@@ -14,7 +14,7 @@ import fakeMovies from '../test_data/fakeMovies'
 class Home extends Component {
   
   static navigationOptions = {
-    tabBarLabel: 'FIRIS',
+    tabBarLabel: 'Home',
     tabBarIcon: ({ focused, tintColor }) => (
       <Image
         style={[styles.icon, { tintColor: focused ? tintColor : 'gray' }]}
@@ -41,7 +41,7 @@ class Home extends Component {
   render() {
     return (      
       <View style={styles.container}>
-        <ScrollableTab initialPage={0}/>
+        {/* <ScrollableTab initialPage={0}/> */}
 
         <MovieList
           style={styles.list}
@@ -56,23 +56,13 @@ class Home extends Component {
 }
 
 const MovieList = styled.FlatList`
-
 `
-
-
 
 const styles = StyleSheet.create({
   icon: {
     width: 32,
     height: 32,
   },
-  container: {
-    flexDirection: 'column',
-    flex: 1
-  },
-  list: {
-    flex: 1
-  }
 })
 
 export default Home

@@ -12,7 +12,7 @@ import { Button } from "../components";
 class MyVideo extends Component {
     static navigationOptions = {
         header: null,
-        title: 'MyVideo',
+        title: 'Community',
         };
 
     pressNextButton = () => {
