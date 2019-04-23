@@ -56,17 +56,27 @@ class MyVideo extends Component {
                 
                 {/* <BottomFloatButton onPress={this.pressNextButton} /> */}
                 <ShareView style = {styles.bottom}>
-                    <View style={{flexDirection: 'row', marginBottom: 10}}>
-                        <View style={{width: '33%', height: 50, backgroundColor: 'powderblue'}}> 
+                    <View style={{flexDirection: 'row', marginBottom: 10, alignItems: 'space-around'}}>
+                        <View style={{}}> 
                             <Image source={require('../images/facebook.png')}></Image>
                         </View>
-                        <View style={{width: '33%', height: 50, backgroundColor: 'skyblue'}} />
-                        <View style={{width: '33%', height: 50, backgroundColor: 'steelblue'}} />
+                        <View style={{}}> 
+                            <Image source={require('../images/twitter.png')}></Image>
+                        </View>
+                        <View style={{}}> 
+                            <Image source={require('../images/youtube-play.png')}></Image>
+                        </View>
                     </View>
                     <View style={{flexDirection: 'row', marginBottom: 10}}>
-                        <View style={{width: '33%', height: 50, backgroundColor: 'powderblue'}} />
-                        <View style={{width: '33%', height: 50, backgroundColor: 'skyblue'}} />
-                        <View style={{width: '33%', height: 50, backgroundColor: 'steelblue'}} />
+                        <View style={{}}> 
+                            <Image source={require('../images/instagram.png')}></Image>
+                        </View>
+                        <View style={{}}> 
+                            <Image source={require('../images/WeChat.png')}></Image>
+                        </View>
+                        <View style={{}}> 
+                            <Image source={require('../images/Weibo.png')}></Image>
+                        </View>
                     </View>
                 </ShareView>
             </MovieView>
