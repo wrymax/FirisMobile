@@ -32,31 +32,31 @@ class MyVideo extends Component {
             <MovieView style={styles.container}>
                 {/* <ScrollableTab initialPage={2}/> */}
                 <View style={styles.top}>
-                <Video 
-                    source={{uri: movie.video_uri }}
-                    style={styles.video}
-                    controls={true}
-                    ref={(ref) => {
-                        this.player = ref
-                    }}
-                    >
-                </Video>
-                <Description>
-                    <DescTitle>Marvels Studios' Avengers - Firis Trailer{"\n"}</DescTitle>
-                    <DescTime>15 hours ago{"\n"}</DescTime>
-                    <DescMore>
-                        Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his...{"\n"}
-                    </DescMore>
-                </Description>
-                <ButtonView>
-                    <Text>Public To Community</Text>
-                    <Switch/>
-                </ButtonView>
+                    <Video 
+                        source={{uri: movie.video_uri }}
+                        style={styles.video}
+                        controls={true}
+                        ref={(ref) => {
+                            this.player = ref
+                        }}
+                        >
+                    </Video>
+                    <Description>
+                        <DescTitle>Marvels Studios' Avengers - Firis Trailer</DescTitle>
+                        <DescTime>15 hours ago</DescTime>
+                        <DescMore>
+                            Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his...
+                        </DescMore>
+                        <ButtonView>
+                            <Text style={{lineHeight: 35}}>Public To Community</Text>
+                            <Switch />
+                        </ButtonView>
+                    </Description>
                 </View>
                 
                 {/* <BottomFloatButton onPress={this.pressNextButton} /> */}
-                <ShareView style = {styles.bottom}>
-                    <View style={{flexDirection: 'row', marginBottom: 10, alignItems: 'space-around'}}>
+                <ShareView>
+                    <View style={{flexDirection: 'row', marginBottom: 10}}>
                         <View style={{}}> 
                             <Image source={require('../images/facebook.png')}></Image>
                         </View>
@@ -86,7 +86,8 @@ class MyVideo extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: 'white'
     },
     top: {
         flex: 1,
@@ -104,13 +105,15 @@ const styles = StyleSheet.create({
 });
 
 const DescTitle = styled.Text`
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     width: 100%;
 `
 const DescTime = styled.Text`
     font-size: 12px;
     color: #999;
+    margin-top: 10px;
+    margin-bottom: 10px;
 `
 
 const DescMore = styled.Text`
@@ -120,18 +123,25 @@ const DescMore = styled.Text`
 const ButtonView = styled.View`
     flexDirection: row;
     justifyContent: space-between;
+    margin-top: 20px;
 `
 const MovieView = styled.View`
     width: 100%
 `
 const IconBox = styled.View`
     width: 50;
-    height:50;
+    height: 50;
     border-color: powderblue;
 `
-const Description = styled.Text`
-    margin: 20px;
+const Description = styled.View`
+    padding: 20px;
+    border-color: #EEE;
+    border-width: 1;
 `
 const ShareView = styled.View`
+    align-items: flex-start;
+    flex: 1;
+    margin-top: 100;
+    /* justify-content: space-between; */
 `
 export default MyVideo
