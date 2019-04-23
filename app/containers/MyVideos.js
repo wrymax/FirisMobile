@@ -21,8 +21,8 @@ class MyVideos extends Component {
       ),
     }
 
-    _pressMovieItem = (video) => {
-      this.props.dispatch(NavigationActions.navigate({ routeName: 'MyVideo', params: { video: video } }))
+    _pressVideoItem = (video) => {
+      this.props.dispatch(NavigationActions.navigate({ routeName: 'MyVideo'}))
     }
 
     renderVideoItem = (video, id) => {

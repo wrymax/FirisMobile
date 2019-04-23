@@ -29,8 +29,8 @@ import MyVideos from './containers/MyVideos'
 
 // always pin on bottom of the screen
 const HomeNavigator = createBottomTabNavigator({
-  Home: { screen: Home },
-  Account: { screen: Account }
+  FIRIS: { screen: Home },
+  Profile: { screen: Account }
 })
 
 // give the title of the page
@@ -136,10 +136,10 @@ class Router extends PureComponent {
 
   backHandle = () => {
     const currentScreen = getActiveRouteName(this.props.router)
-    if (currentScreen === 'Login') {
+    if (currentScreen === 'Profile') {
       return true
     }
-    if (currentScreen !== 'Home') {
+    if (currentScreen !== 'FIRIS') {
       this.props.dispatch(NavigationActions.back())
       return true
     }

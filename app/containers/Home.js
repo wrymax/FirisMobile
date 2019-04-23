@@ -14,7 +14,7 @@ import fakeMovies from '../test_data/fakeMovies'
 class Home extends Component {
   
   static navigationOptions = {
-    tabBarLabel: 'Home',
+    tabBarLabel: 'FIRIS',
     tabBarIcon: ({ focused, tintColor }) => (
       <Image
         style={[styles.icon, { tintColor: focused ? tintColor : 'gray' }]}
