@@ -62,12 +62,6 @@ class MovieDetail extends Component {
   }
 
 
-
-
-
-
-
-
   render() {
     const state = this.props.navigation.state
     const { movie } = state.params
@@ -76,6 +70,9 @@ class MovieDetail extends Component {
         <Video 
           source={{uri: movie.video_uri }}
           style={styles.video}
+          controls={true}
+          paused={false}
+          // muted={true}
           ref={(ref) => {
             this.player = ref
           }}
