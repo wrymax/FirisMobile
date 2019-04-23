@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { TouchableOpacity, View, Image, Text, StyleSheet } from 'react-native'
 import styled from 'styled-components'
+import Video from 'react-native-video'
+import { connect } from 'react-redux'
+import { createAction, NavigationActions } from '../utils'
+import { Button } from "../components";
 
 class MyVideoListItem extends React.Component {
   _onPress = () => {
-    this.props.onPressItem(this.props.video.item);
+    this.props.onPressItem();
   };
 
   render() {
