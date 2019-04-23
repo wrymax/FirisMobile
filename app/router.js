@@ -48,6 +48,7 @@ const HomeNavigator = createMaterialTopTabNavigator({
 });
 
 
+
 // give the title of the page
 HomeNavigator.navigationOptions = ({ navigation }) => {
   console.log(navigation)
