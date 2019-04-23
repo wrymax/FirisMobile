@@ -56,25 +56,25 @@ class MyVideo extends Component {
                 
                 {/* <BottomFloatButton onPress={this.pressNextButton} /> */}
                 <ShareView>
-                    <View style={{flexDirection: 'row', marginBottom: 10}}>
-                        <View style={{}}> 
+                    <View style={{flexDirection: 'row', marginBottom: 10, alignItems: 'space-between', justifyContent: 'space-around'}}>
+                        <View style={{flex: 1, alignItems: 'center'}}> 
                             <Image source={require('../images/facebook.png')}></Image>
                         </View>
-                        <View style={{}}> 
+                        <View style={{flex: 1, alignItems: 'center'}}> 
                             <Image source={require('../images/twitter.png')}></Image>
                         </View>
-                        <View style={{}}> 
+                        <View style={{flex: 1, alignItems: 'center'}}> 
                             <Image source={require('../images/youtube-play.png')}></Image>
                         </View>
                     </View>
                     <View style={{flexDirection: 'row', marginBottom: 10}}>
-                        <View style={{}}> 
+                        <View style={{flex: 1, alignItems: 'center'}}>  
                             <Image source={require('../images/instagram.png')}></Image>
                         </View>
-                        <View style={{}}> 
+                        <View style={{flex: 1, alignItems: 'center'}}> 
                             <Image source={require('../images/WeChat.png')}></Image>
                         </View>
-                        <View style={{}}> 
+                        <View style={{flex: 1, alignItems: 'center'}}> 
                             <Image source={require('../images/Weibo.png')}></Image>
                         </View>
                     </View>
@@ -139,9 +139,10 @@ const Description = styled.View`
     border-width: 1;
 `
 const ShareView = styled.View`
+    padding: 10%;
     align-items: flex-start;
     flex: 1;
-    margin-top: 100;
-    /* justify-content: space-between; */
+    margin-top: 200;
+    justify-content: space-around;
 `
 export default MyVideo
