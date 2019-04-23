@@ -6,14 +6,13 @@ import Video from 'react-native-video'
 // import ScrollableTab from "../components/ScrollableTab";
 import { connect } from 'react-redux'
 import { createAction, NavigationActions } from '../utils'
-import { Button } from "../components";
+import { Button } from "../components"
 
 @connect(({ app }) => ({ ...app }))
 class MyVideo extends Component {
     static navigationOptions = {
-        header: null,
         title: 'MyVideo',
-        };
+    }
 
     pressNextButton = () => {
         this.props.dispatch(NavigationActions.navigate({ routeName: 'Home' }))
@@ -32,6 +31,7 @@ class MyVideo extends Component {
         return (
             <MovieView style={styles.container}>
                 {/* <ScrollableTab initialPage={2}/> */}
+                <View style={styles.top}>
                 <Video 
                     source={{uri: movie.video_uri }}
                     style={styles.video}
@@ -40,13 +40,21 @@ class MyVideo extends Component {
                     }}
                     >
                 </Video>
-                <Description>feawfewa</Description>
+                <Description>
+                    <DescTitle>Marvels Studios' Avengers - Firis Trailer</DescTitle>
+                    <DescTime>15 hours ago</DescTime>
+                    <DescMore>
+                        Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his...
+                    </DescMore>
+                </Description>
                 <ButtonView>
                     <Text>Public To Community</Text>
                     <Switch/>
                 </ButtonView>
+                </View>
+                
                 {/* <BottomFloatButton onPress={this.pressNextButton} /> */}
-                <ShareView style = {styles.share}>
+                <ShareView style = {styles.bottom}>
                     <View style={{flexDirection: 'row', marginBottom: 10}}>
                         <View style={{width: '33%', height: 50, backgroundColor: 'powderblue'}}> 
                             <Image source={require('../images/facebook.png')}></Image>
@@ -69,13 +77,35 @@ const styles = StyleSheet.create({
     container: {
         flex: 1
     },
-    video: {
-        flex: 2
+    top: {
+        flex: 1,
+        height: 100,
+        // alignItems: 'flex-start'
     },
-    share: {
-        flex: 3
+    video: {
+        // flex: 1,
+        width: '100%',
+        height: 200
+    },
+    bottom: {
+        flex: 1
     }
 });
+
+const DescTitle = styled.Text`
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+`
+const DescTime = styled.Text`
+    font-size: 12px;
+    color: #999;
+`
+
+const DescMore = styled.Text`
+    font-size: 12px;
+`
+
 const ButtonView = styled.View`
     flexDirection: row;
     justifyContent: space-between;

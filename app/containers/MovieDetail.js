@@ -86,13 +86,6 @@ class MovieDetail extends Component {
   }
 }
 
-
-
-
-
-
-
-
 const MovieView = styled.View`
   backgroundColor: white;
   flex: 1;
