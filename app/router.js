@@ -32,8 +32,21 @@ const HomeNavigator = createMaterialTopTabNavigator({
   Home: { screen: Home },
   MyVideos: { screen: MyVideos },
   MyVideo: { screen: MyVideo }
+},{
+  tabBarOptions:{
+    scrollEnabled:true,
+    labelStyle:{
+      fontSize:12
+    },
+    style:{
+      backgroundColor:'white'
+    },
+    labelStyle:{
+      color:'black'
+    }
+  },
   // Profile: { screen: Account }
-})
+});
 
 // give the title of the page
 HomeNavigator.navigationOptions = ({ navigation }) => {
