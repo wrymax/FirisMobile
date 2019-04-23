@@ -35,16 +35,17 @@ class MyVideo extends Component {
                 <Video 
                     source={{uri: movie.video_uri }}
                     style={styles.video}
+                    controls={true}
                     ref={(ref) => {
                         this.player = ref
                     }}
                     >
                 </Video>
                 <Description>
-                    <DescTitle>Marvels Studios' Avengers - Firis Trailer</DescTitle>
-                    <DescTime>15 hours ago</DescTime>
+                    <DescTitle>Marvels Studios' Avengers - Firis Trailer{"\n"}</DescTitle>
+                    <DescTime>15 hours ago{"\n"}</DescTime>
                     <DescMore>
-                        Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his...
+                        Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his...{"\n"}
                     </DescMore>
                 </Description>
                 <ButtonView>
@@ -119,6 +120,7 @@ const IconBox = styled.View`
     border-color: powderblue;
 `
 const Description = styled.Text`
+    margin: 20px;
 `
 const ShareView = styled.View`
 `
