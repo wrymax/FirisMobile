@@ -25,7 +25,7 @@ class MyVideo extends Component {
         if (movie == null) {
             console.log("video uri not in movie")
             movie = {
-                video_uri: "https://video-mxiptovpbs.now.sh/test.mp4"
+                video_uri: "https://tmp-8w7v5lk69.now.sh/demo.MP4"
             }
             console.log("movie modified")
         }
