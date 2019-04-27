@@ -17,6 +17,7 @@ import {
 import { connect } from 'react-redux'
 
 import Home from './containers/Home'
+import Landing from './containers/Landing'
 import Account from './containers/Account'
 
 import Loading from './containers/Loading'
@@ -56,6 +57,7 @@ HomeNavigator.navigationOptions = ({ navigation }) => {
 
   const { routeName } = navigation.state.routes[navigation.state.index]
   if (routeName == "MyVideo") return {title : "MY VIDEOS"}
+  if (routeName == "landing") return null;
   return {
     headerBackground: (
       <Image
@@ -148,6 +150,12 @@ function getActiveRouteName(navigationState) {
 
 @connect(({ app, router }) => ({ app, router }))
 class Router extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      landing: true
+    };
+  }
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.backHandle)
   }
@@ -167,12 +175,19 @@ class Router extends PureComponent {
     }
     return false
   }
-
+  onLandingClicked = () => {
+    this.setState({
+      landing:false
+    });
+  }
   render() {
     const { app, dispatch, router } = this.props
     if (app.loading) return <Loading />
-
-    return <App dispatch={dispatch} state={router} />
+    if (this.state.landing) {
+      return <Landing onLandingClicked = {this.onLandingClicked}/>
+    } else {
+      return <App dispatch={dispatch} state={router} /> 
+    }
   }
 }
 
