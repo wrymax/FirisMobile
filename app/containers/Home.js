@@ -13,7 +13,9 @@ import fakeMovies from '../test_data/fakeMovies'
 
 class Home extends Component {
   
+  
   static navigationOptions = {
+    title: 'FIRIS',
     tabBarLabel: 'Home',
     tabBarIcon: ({ focused, tintColor }) => (
       <Image

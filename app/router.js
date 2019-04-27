@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { BackHandler, Animated, Easing } from 'react-native'
+import { BackHandler, Animated, Easing, Image, StyleSheet } from 'react-native'
 
 import {
   createStackNavigator,
@@ -57,7 +57,12 @@ HomeNavigator.navigationOptions = ({ navigation }) => {
   titleName = "My Videos"
   if (routeName == "home" || routeName == "MyVideos") titleName = "firis"
   return {
-    headerTitle: titleName
+    headerBackground: (
+      <Image
+        style={{alignSelf: 'center', resizeMode: 'contain', height: 27, bottom: -48}}
+        source={require('./images/logo.png') }
+      />
+    ),
   }
 }
 
@@ -69,6 +74,7 @@ const MainNavigator = createStackNavigator(
   },
   {
     headerMode: 'float',
+
   }
 )
 
