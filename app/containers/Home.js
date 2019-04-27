@@ -41,19 +41,19 @@ class Home extends Component {
   }
 
   render() {
-      return (      
-        <View style={styles.container}>
-          {/* <ScrollableTab initialPage={0}/> */}
-  
-          <MovieList
-            style={styles.list}
-            data={fakeMovies}
-            renderItem={this.renderMovieItem}
-            keyExtractor={this.keyExtractor}
-          >
-          </MovieList>
-        </View>
-      );
+
+    return (      
+      <View style={styles.container}>
+        {/* <ScrollableTab initialPage={0}/> */}
+        <MovieList
+          style={styles.list}
+          data={fakeMovies}
+          renderItem={this.renderMovieItem}
+          keyExtractor={this.keyExtractor}
+        >
+        </MovieList>
+      </View>
+    );
   }
 }
 
