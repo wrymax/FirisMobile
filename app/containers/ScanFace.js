@@ -16,7 +16,9 @@ import { NavigationActions } from '../utils'
 import { connect } from 'react-redux'
 import Camera from 'react-native-camera'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import LottieView from 'lottie-react-native'
+
+import Animation from 'lottie-react-native';
+import anim from './../images/dataAll.json'
 
 const styles = StyleSheet.create({
   container: {
@@ -45,7 +47,51 @@ class ScanFace extends Component {
   render() {
     return (
       <View style={styles.container}>
-          <LottieView source={require('./../images/animation.json')} autoPlay loop />;
+          <Camera
+            ref={(cam) => {
+              this.camera = cam;
+            }}
+            style={styles.preview}
+            aspect={Camera.constants.Aspect.fill}
+            type={Camera.constants.Type.front}
+            mirrorImage={true}
+            captureMode={Camera.constants.CaptureMode.still}
+            captureTarget={Camera.constants.CaptureTarget.memory}
+            captureQuality={Camera.constants.CaptureQuality.high}
+            playSoundOnCapture={true}>
+
+            {/* <View style={[{ flex: 1 }]}>
+              <Text>hi</Text>
+            </View> */}
+            <Animation
+              ref={animation => {
+                this.animation = animation;
+              }}
+              style={{
+                width: 280,
+                height: 280,
+              }}
+              loop={true}
+              source={anim}
+              autoPlay={true}
+            />
+
+            <View style={[{ height: 70, bottom: 35 }]}>
+              <TouchableOpacity
+                style={[styles.cameraIco, { height: 72}]}
+                onPress={this.takePicture}
+              >
+                <View>
+                  <Icon
+                    name="circle"
+                    size={70}
+                    color={'ffffff'}
+                  />
+                </View>
+              </TouchableOpacity>
+            </View> 
+
+          </Camera>
       </View>
     )
   }

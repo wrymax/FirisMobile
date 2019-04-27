@@ -44,7 +44,6 @@ class Home extends Component {
     return (      
       <View style={styles.container}>
         {/* <ScrollableTab initialPage={0}/> */}
-
         <MovieList
           style={styles.list}
           data={fakeMovies}
