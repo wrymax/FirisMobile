@@ -16,7 +16,11 @@ class CharacterPicker extends Component {
     if(this.props.picked) {
       return (
         <PickedCheckMask>
-          <Check>️️️✔</Check>
+          <Check>️️️
+            <Image
+              source={require('../images/Checkmark.png') }
+            />
+          </Check>
         </PickedCheckMask>
       )
     }
