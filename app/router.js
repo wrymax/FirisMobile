@@ -29,7 +29,7 @@ import MyVideos from './containers/MyVideos'
 
 // always pin on bottom of the screen
 const HomeNavigator = createMaterialTopTabNavigator({
-  Home: { screen: Home },
+  home: { screen: Home },
   MyVideos: { screen: MyVideos },
   MyVideo: { screen: MyVideo }
 }, {
@@ -54,8 +54,10 @@ HomeNavigator.navigationOptions = ({ navigation }) => {
   console.log(navigation)
 
   const { routeName } = navigation.state.routes[navigation.state.index]
+  titleName = "My Videos"
+  if (routeName == "home" || routeName == "MyVideos") titleName = "firis"
   return {
-    headerTitle: routeName,
+    headerTitle: titleName
   }
 }
 

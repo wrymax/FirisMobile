@@ -10,17 +10,10 @@ import { Button } from "../components"
 
 @connect(({ app }) => ({ ...app }))
 class MyVideo extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: false
-        };
-    }
     static navigationOptions = {
         header: null,
         title: 'Community',
         };
-
 
     pressNextButton = () => {
         this.props.dispatch(NavigationActions.navigate({ routeName: 'Home' }))
@@ -44,7 +37,6 @@ class MyVideo extends Component {
                         source={{uri: movie.video_uri }}
                         style={styles.video}
                         controls={true}
-                        paused={true}
                         ref={(ref) => {
                             this.player = ref
                         }}
@@ -58,10 +50,7 @@ class MyVideo extends Component {
                         </DescMore>
                         <ButtonView>
                             <Text style={{lineHeight: 35}}>Public To Community</Text>
-                            <Switch 
-                                value = {this.state.value}
-                                onValueChange = {(value) => {
-                                    this.setState({value})}} />
+                            <Switch />
                         </ButtonView>
                     </Description>
                 </View>
