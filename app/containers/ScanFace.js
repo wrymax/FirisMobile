@@ -17,9 +17,6 @@ import { connect } from 'react-redux'
 import Camera from 'react-native-camera'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import Animation from 'lottie-react-native';
-import anim from './../images/FaciaRecMotionText4.json'
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -76,9 +73,10 @@ class ScanFace extends Component {
               autoPlay={true}
             /> */}
             <Image
+             style={{resizeMode: "stretch", bottom: 0}}
              source={require('./../images/5_FacialRec.gif')} />
 
-            <View style={[{ height: 70, bottom: 35 }]}>
+            <View style={[{ height: 70, bottom: 35, position:"absolute" }]}>
               <TouchableOpacity
                 style={[styles.cameraIco, { height: 72}]}
                 onPress={this.takePicture}

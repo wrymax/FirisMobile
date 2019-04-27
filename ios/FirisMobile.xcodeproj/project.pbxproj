@@ -50,13 +50,10 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8A45DF97B36B4452905A8D77 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 349AC9FCC56841FEB77BE25C /* Ionicons.ttf */; };
 		8B3C63FCF7AA47C3ADDA87C3 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EDE47DE45547D4872963FB /* libRCTVideo.a */; };
-		A4EAE8357556436E8AD13F4F /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8465C27DE44F48179159DCD8 /* Lottie.framework */; };
 		AC817D76E06E46E5BD32CDA5 /* libreactnativeuilib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC4811CFB5C4B52A2E34616 /* libreactnativeuilib.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		B00CE9B1457D40589B57399E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB98F0487A3244CF86A1F3BA /* EvilIcons.ttf */; };
-		CA591B7E849F436AB5580304 /* libLottie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7DF455A695425B81D0038F /* libLottie.a */; };
 		D595B3FFFC114435BEE15019 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78B54DD3C2784267BB1E74D7 /* Feather.ttf */; };
-		EFF9F227304341EBBB3034FC /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D5EA088AED43888D63CC08 /* libLottieReactNative.a */; };
 		F2B076368972403E9BDCE11D /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94D1B3D2144A46A0B5C3CE76 /* Octicons.ttf */; };
 		F325D443818A4EAE8D8A0BFD /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B1600C8B46447A89A31D8D9 /* SimpleLineIcons.ttf */; };
 		F6E2553684174BB88D46DDFE /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 923F8A671BEC4DC6A272550B /* Foundation.ttf */; };
@@ -510,9 +507,6 @@
 				8B3C63FCF7AA47C3ADDA87C3 /* libRCTVideo.a in Frameworks */,
 				FAC87F975CBB4F7AA8DC6A43 /* libRNCamera.a in Frameworks */,
 				47D25478ADE14699B25BA347 /* libRNVectorIcons.a in Frameworks */,
-				EFF9F227304341EBBB3034FC /* libLottieReactNative.a in Frameworks */,
-				A4EAE8357556436E8AD13F4F /* Lottie.framework in Frameworks */,
-				CA591B7E849F436AB5580304 /* libLottie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -932,12 +926,12 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = M4RN7WM243;
+						DevelopmentTeam = T67LW4R3TX;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = M4RN7WM243;
+						DevelopmentTeam = T67LW4R3TX;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -956,6 +950,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1539,7 +1534,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M4RN7WM243;
+				DEVELOPMENT_TEAM = T67LW4R3TX;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1585,7 +1580,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = M4RN7WM243;
+				DEVELOPMENT_TEAM = T67LW4R3TX;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-ui-lib/lib/ios/reactnativeuilib/**",
@@ -1628,7 +1623,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = M4RN7WM243;
+				DEVELOPMENT_TEAM = T67LW4R3TX;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-ui-lib/lib/ios/reactnativeuilib/**",
@@ -1659,7 +1654,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M4RN7WM243;
+				DEVELOPMENT_TEAM = T67LW4R3TX;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-ui-lib/lib/ios/reactnativeuilib/**",
