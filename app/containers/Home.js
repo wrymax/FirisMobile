@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Image, FlatList, Alert, Text } from 'react-native'
+import { StyleSheet, View, Image, FlatList, Alert, Text} from 'react-native'
+import { Button } from '../components'
 import styled from 'styled-components'
 import MovieListItem from '../components/MovieListItem'
 import ScrollableTab, { DefaultTabBar, ScrollableTabBar } from "../components/ScrollableTab";
@@ -12,7 +13,6 @@ import fakeMovies from '../test_data/fakeMovies'
 @connect(({ app, Home }, router) => ({ app, Home, router }))
 
 class Home extends Component {
-  
   
   static navigationOptions = {
     title: 'FIRIS',
@@ -41,6 +41,7 @@ class Home extends Component {
   }
 
   render() {
+
     return (      
       <View style={styles.container}>
         {/* <ScrollableTab initialPage={0}/> */}
