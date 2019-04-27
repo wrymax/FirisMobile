@@ -73,10 +73,10 @@ class ScanFace extends Component {
               autoPlay={true}
             /> */}
             <Image
-             style={{resizeMode: "stretch", bottom: 0}}
+             style={{resizeMode: 'stretch', bottom: 0}}
              source={require('./../images/5_FacialRec.gif')} />
 
-            <View style={[{ height: 70, bottom: 35, position:"absolute" }]}>
+            <View style={[{ height: 70, bottom: 55, position: "absolute" }]}>
               <TouchableOpacity
                 style={[styles.cameraIco, { height: 72}]}
                 onPress={this.takePicture}
@@ -85,7 +85,7 @@ class ScanFace extends Component {
                   <Icon
                     name="circle"
                     size={70}
-                    color={'ffffff'}
+                    color='transparent'
                   />
                 </View>
               </TouchableOpacity>
