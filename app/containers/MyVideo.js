@@ -36,6 +36,7 @@ class MyVideo extends Component {
                     <Video 
                         source={{uri: movie.video_uri }}
                         style={styles.video}
+                        paused={true}
                         controls={true}
                         ref={(ref) => {
                             this.player = ref
