@@ -18,7 +18,7 @@ import Camera from 'react-native-camera'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import Animation from 'lottie-react-native';
-import anim from './../images/dataAll.json'
+import anim from './../images/FaciaRecMotionText4.json'
 
 const styles = StyleSheet.create({
   container: {
@@ -63,7 +63,7 @@ class ScanFace extends Component {
             {/* <View style={[{ flex: 1 }]}>
               <Text>hi</Text>
             </View> */}
-            <Animation
+            {/* <Animation
               ref={animation => {
                 this.animation = animation;
               }}
@@ -74,7 +74,9 @@ class ScanFace extends Component {
               loop={true}
               source={anim}
               autoPlay={true}
-            />
+            /> */}
+            <Image
+             source={require('./../images/5_FacialRec.gif')} />
 
             <View style={[{ height: 70, bottom: 35 }]}>
               <TouchableOpacity
