@@ -37,13 +37,14 @@ const HomeNavigator = createMaterialTopTabNavigator({
       scrollEnabled: true,
       labelStyle: {
           fontSize: 12,
+          color: 'black'
       },
       style: {
         backgroundColor: 'white',
       },
-      labelStyle: {
-        color: 'black'
-    }
+      indicatorStyle: {
+        backgroundColor: '#4366FF',
+      }
   },
 });
 
@@ -54,8 +55,7 @@ HomeNavigator.navigationOptions = ({ navigation }) => {
   console.log(navigation)
 
   const { routeName } = navigation.state.routes[navigation.state.index]
-  titleName = "My Videos"
-  if (routeName == "home" || routeName == "MyVideos") titleName = "firis"
+  if (routeName == "MyVideo") return {title : "MY VIDEOS"}
   return {
     headerBackground: (
       <Image

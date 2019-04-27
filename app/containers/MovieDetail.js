@@ -19,7 +19,7 @@ import BottomFloatButton from '../components/BottomFloatButton'
 
 class MovieDetail extends Component {
   static navigationOptions = {
-    title: 'MovieDetail',
+    // title: 'MovieDetail',
   }
 
   renderCharacterPickers = () => {
