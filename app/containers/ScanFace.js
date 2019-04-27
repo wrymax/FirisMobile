@@ -45,7 +45,7 @@ class ScanFace extends Component {
   render() {
     return (
       <View style={styles.container}>
-          <LottieView source={require('./../images/FaciaRecMotiondata.json')} autoPlay loop />;
+          <LottieView source={require('./../images/animation.json')} autoPlay loop />;
       </View>
     )
   }
